@@ -1,14 +1,26 @@
-import Post from "./components/Post";
+import styled from 'styled-components';
 
-import styles from './App.module.css';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import JobForm from './components/JobForm';
+import JobList from './components/JobList';
+
+const AppContainer = styled.div`
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px;
+  background: #f2f6fb;
+  min-height: 100vh;
+`;
 
 function App() {
   return (
-    <div className={styles.app}>
-      <Post imageUrl="https://www.orangeboxminiaturas.com.br/img/products/batmovel-1989-figura-batman-em-metal-jada-toys-1-24-jad-98260_1_1000.jpg">
-        Olha só que legal minha miniatura do Batmóvel.
-      </Post>
-    </div>
+    <AppContainer>
+      <Header />
+      <Hero />
+      <JobForm />
+      <JobList />
+    </AppContainer>
   );
 }
 
