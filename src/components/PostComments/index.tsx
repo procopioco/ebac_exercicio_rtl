@@ -65,18 +65,19 @@ const PostComments = () => {
         <div>
             <CommentList>
                 {comments.map(({ comment, id }) => (
-                    <CommentItem key={id}>
+                    <CommentItem key={id} data-testid="comment-item">
                         <CommentContent>{comment}</CommentContent>
                     </CommentItem>
                 ))}
             </CommentList>
             <CommentForm onSubmit={handleAddComment}>
                 <CommentTextarea
+                    data-testid="comment-input"
                     value={tempComment}
                     onChange={(e: ChangeEvent<HTMLTextAreaElement>) => setTempComment(e.target.value)}
                     required
                 />
-                <CommentButton type="submit">Comentar</CommentButton>
+                <CommentButton data-testid="comment-submit" type="submit">Comentar</CommentButton>
             </CommentForm>
         </div>
     );
